@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+{% block header %}
+{% endblock %}
+{% block content %}
+<table>
+    <tr>
+        <th nowrap>任务名称</th>
+        <th nowrap>任务说明</th>
+        <th nowrap>任务状态</th>
+        <th nowrap>任务记录</th>
+        <th nowrap>操作</th>
+    </tr>
+    {% if tasks %}
+        {% for task in tasks %}
+        <tr>
+            <td nowrap>{{task.task_name}}</td>
+            <td style="text-align:left">{{task.task_description}}</td>
+            <td nowrap>{{task.task_status}}</td>
+            <td nowrap><a style="color:blue" href="/migu/{{task.id}}/record">历史记录</a></td>
+            {% if task.task_status.task_statusid != 2 %}
+            <td nowrap><a href="/migu/{{task.id}}/run" class="button white" >执行任务</a></td>
+            {% else %}
+            <td nowrap><button disabled="disabled" class="button" >等待任务</button></td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    {% else %}
+        <tr><td>无</td><td>无</td><td>无</td><td>无</td><td>无</td></tr>
+    {% endif %}
+</table>
+{% endblock %}

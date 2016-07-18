@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+{% block header %}
+{% endblock %}
+{% block content %}
+<table>
+    <tr>
+        <th nowrap>任务名称</th>
+        <th nowrap>执行人员</th>
+        <th nowrap>报告名称</th>
+        <th nowrap>执行时间</th>
+        <th nowrap>查看结果</th>
+    </tr>
+    {% for record in taskrecord %}
+    <tr>
+        <td nowrap>{{record.task_record_task_id.task_name}}</td>
+        <td nowrap>{{record.task_record_user_id.username}}</td>
+        <td style="text-align:left;word-break:break-all; word-wrap:break-word;">{{record.task_record_result_path}}</td>
+        <td nowrap>{{record.task_record_createtime}}</td>
+        <td nowrap><a href="/migu/download?dp={{record.task_record_result_path}}" class="button white">查看报告</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
