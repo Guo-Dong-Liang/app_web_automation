@@ -1,0 +1,11 @@
+1、首先你需要配置好python环境，我这里使用的是python27，https://www.python.org/downloads/ ，在windows下，直接下载个python的安装程序按照一般的程序安装就行啦。
+检查下python是否安装成功，命令行cmd，直接输入python看看是不是有反应。安装完成后，在安装目录中有个很好的工具叫做pip，这个安装python的包很好用，大家可以配置一个环境变量，以后直接pip install xx就可以安装东西了，不用切换目录，比如我就把C:\Python27\Scripts这个路径配置到环境变量中了，后面的安装会用到的
+1.2 把python相关的东西都安装了吧，这里有个很重要的东西，包---Appium-Python-Client，我们就用上面的pip命令安装  pip install Appium-Python-Client，会有个进度条显示，然后提示安装成功
+1.3 安装django，我用的最新版本1.9 直接pip哦，看图：pip install django，这个是框架使用的包
+
+2、你需要配置好java环境，这个网上搜索下就行了，主要是配置环境变量
+2.1 安装nodejs，这个很重要哦，给个官网地址：https://nodejs.org/en/，自己找版本安装，完成后检查下，安装这个东西我们可以用个npm很好的东西安装东西哦（第二个图就是npm的命令，大家可以多看帮助）
+2.2 npm安装appium服务端（核心点）：给个安装的命令：npm install -g appium。如果报错了，请看报错的描述自行解决。看一个安装成功后的样子，直接在cmd中输入appium，这样appium的服务端就安装好了，你可以开始考虑开发脚本的事情了
+2.3 回到java环境的事情上来，还有个很必要的东西，Android-sdk 这个是和手机交互的必要东西，给大家看一个目录，安装 android 的 sdk  ( http://developer.android.com/sdk/index.html ), 运行依赖 sdk 中的 'android' 工具。并确保你安装了 Level 17 或以上的版本 api。设置  ANDROID_HOME   系统变量为你的 Android SDK 路径，并把 tools platform-tools 两个目录加入到系统的 Path 路径里。因为这里面包含有一些执行命令。SDK更新太慢，解决方案： http://blog.csdn.net/huim_lin/article/details/17440123
+
+3、Android-sdk 这个文件夹我会放在这里供大家下载，算了所有相关的安装包我都放这里吧
